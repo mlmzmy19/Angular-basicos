@@ -1,0 +1,18 @@
+<p>listado de Personajes</p>
+
+
+<ng-container *ngIf="pBorrado; else noBorrado">
+    <h3>Personaje Borrado: <small><strong>{{pBorrado}}</strong></small></h3>    
+</ng-container>
+<ng-template #noBorrado>
+    No se ha borrado ningún Personaje 
+</ng-template>
+
+<ul>
+    <li *ngFor="let personaje of personajes; let i=index">
+      {{i+1}}.- {{ personaje }}
+    </li>
+</ul>
+<button (click)="borraPersonaje()">
+    Borra Personaje
+</button>
